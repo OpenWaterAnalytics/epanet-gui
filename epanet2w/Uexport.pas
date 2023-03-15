@@ -474,10 +474,10 @@ begin
         with TLink(slist.Objects[i]) do
           if Assigned(Node1) and Assigned(Node2) then
             Writeln(F,Format(' %-16s'#9'%-16s'#9'%-16s'#9'%-12s'#9'%-4s'#9+
-              '%-12s'#9'%-12s'#9';%s',
+              '%-12s'#9'%-12s'#9'%-16s'#9';%s',
                 [slist[i],Node1.ID,Node2.ID,Data[VALVE_DIAM_INDEX],
                   Data[VALVE_TYPE_INDEX],Data[VALVE_SETTING_INDEX],
-                    Data[VALVE_MLOSS_INDEX],Data[COMMENT_INDEX]]));
+                    Data[VALVE_MLOSS_INDEX],Data[VALVE_CURVE_INDEX],Data[COMMENT_INDEX]]));
       end;
     end;
     Writeln(F);

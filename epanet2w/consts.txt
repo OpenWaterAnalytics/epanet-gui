@@ -29,8 +29,8 @@ const
     'Hydraulics'#13'Quality'#13'Reactions'#13'Times'#13'Energy'#0;
 
 // Labels of X-Y curve types
-  CurveLabel: array [0..3] of PChar =
-    ('VOLUME','PUMP','EFFICIENCY','HEADLOSS');
+  CurveLabel: array [0..4] of PChar =
+    ('VOLUME','PUMP','EFFICIENCY','HEADLOSS','VALVE');
 
 // Water Quality parameters
   QualParams: array[0..3] of PChar = ('None', 'Chemical', 'Trace', 'Age');
@@ -174,7 +174,7 @@ const
     (Name:'Quality';       Style:esReadOnly;Mask:emNone),
     (Name:'Status';        Style:esReadOnly;Mask:emNone));
 
-  ValveProps: array [0..14] of TPropRecord =
+  ValveProps: array [0..15] of TPropRecord =
    ((Name:'*Valve ID';      Style:esEdit;    Mask:emNoSpace;  Length:MAXID),
     (Name:'*Start Node';    Style:esEdit;    Mask:emNoSpace;  Length:MAXID),
     (Name:'*End Node';      Style:esEdit;    Mask:emNoSpace;  Length:MAXID),
@@ -182,11 +182,12 @@ const
     (Name:'Tag';            Style:esEdit;    Mask:emNoSpace),
     (Name:'*Diameter';      Style:esEdit;    Mask:emPosNumber),
     (Name:'*Type';          Style:esComboList; Mask:emNone;   Length:0;
-     List:'PRV'#13'PSV'#13'PBV'#13'FCV'#13'TCV'#13'GPV'),
+     List:'PRV'#13'PSV'#13'PBV'#13'FCV'#13'TCV'#13'GPV'#13'PCV'),
     (Name:'*Setting';       Style:esEdit;    Mask:emNoSpace;  Length:MAXID),
     (Name:'Loss Coeff.';    Style:esEdit;    Mask:emPosNumber),
     (Name:'Fixed Status';   Style:esComboList; Mask:emNone;   Length:0;
      List:'None'#13'Open'#13'Closed'),
+    (Name:'Valve Curve';    Style:esEdit; Mask:emNoSpace;  Length:MAXID),
     (Name:'Flow';           Style:esReadOnly;Mask:emNone),
     (Name:'Velocity';       Style:esReadOnly;Mask:emNone),
     (Name:'Headloss';       Style:esReadOnly;Mask:emNone),
@@ -333,14 +334,15 @@ const
                     '',        //8 - Energy Price         (11)
                     '');       //9 - Price Pattern        (12)
 
-  DefValve:  array [0..6] of String =               //Index in ValveProps
+  DefValve:  array [0..7] of String =               //Index in ValveProps
                    ('',        //0 - Comment              (3)
                     '',        //1 - Tag                  (4)
                     '12',      //2 - Diameter             (5)
                     'PRV',     //3 - Valve Type           (6)
                     '0',       //4 - Setting              (7)
                     '0',       //5 - Minor Loss Coeff.    (8)
-                    'None');   //6 - Fixed Status         (9)
+                    'None',    //6 - Fixed Status         (9)
+                    '');       //7 - Valve Curve          (10)
 
   DefOptions: array [0..MAXOPTIONS] of String =
                     ('GPM',         {0-Flow units}

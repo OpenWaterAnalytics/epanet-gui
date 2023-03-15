@@ -23,12 +23,13 @@ const
   HEADCURVE  = 1;
   EFFCURVE   = 2;
   HLOSSCURVE = 3;
+  VALVECURVE = 4;
   MAXPOINTS = 50;
   TINY = 0.000001;  //1.e-6;
-  Xlabel: array[0..3] of PChar =
-    (' Height', ' Flow', ' Flow', ' Flow');
-  Ylabel: array[0..3] of PChar =
-    (' Volume', ' Head', ' Efficiency', ' Headloss');
+  Xlabel: array[0..4] of PChar =
+    (' Height', ' Flow', ' Flow', ' Flow', 'Opening');
+  Ylabel: array[0..4] of PChar =
+    (' Volume', ' Head', ' Efficiency', ' Headloss', 'Headloss');
   MSG_OUT_OF_ORDER = ' values are not in ascending order.';
   MSG_BAD_CURVE = 'Illegal pump curve. Continue editing?';
   FMT_EQN = ' Head = %f%-.4g(Flow)^%f';
@@ -44,8 +45,8 @@ const
 var
   X : array[1..MAXPOINTS] of Double;
   Y : array[1..MAXPOINTS] of Double;
-  Xunits: array[0..3] of String;
-  Yunits: array[0..3] of String;
+  Xunits: array[0..4] of String;
+  Yunits: array[0..4] of String;
 
 type
   TCurveForm = class(TForm)
@@ -127,10 +128,12 @@ begin
   Xunits[HEADCURVE]  := ' (' + FlowUnits + ')';
   Xunits[EFFCURVE]   := Xunits[HEADCURVE];
   Xunits[HLOSSCURVE] := Xunits[HEADCURVE];
+  Xunits[VALVECURVE] := Xunits[HEADCURVE];
   Yunits[VOLCURVE]   := TXT_CUBIC + LengthUnits + ')';
   Yunits[HEADCURVE]  := ' (' + LengthUnits + ')';
   Yunits[EFFCURVE]   := TXT_PERCENT;
   Yunits[HLOSSCURVE] := ' (' + LengthUnits + ')';
+  Yunits[VALVECURVE] := TXT_PERCENT;
   CurveGrid.RowCount := MAXPOINTS + 1;
   CurveID.MaxLength := MAXID;  //Max. chars. in a ID
   ActiveControl := CurveID;

@@ -116,6 +116,7 @@ const
  EN_FCV        = 6;
  EN_TCV        = 7;
  EN_GPV        = 8;
+ EN_PCV        = 9;
  
  EN_CLOSED     = 0;   { Link status types }
  EN_OPEN       = 1;
