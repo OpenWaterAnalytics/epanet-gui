@@ -1,10 +1,12 @@
 # EPANET Development Preview
 
-<img src="https://user-images.githubusercontent.com/6113153/233481310-ca940de6-9a80-4904-9ca2-8110bab721ec.png" alt="placeholder" height="400" align="right"/>
+<img src="https://user-images.githubusercontent.com/6113153/233481310-ca940de6-9a80-4904-9ca2-8110bab721ec.png" alt="placeholder" height="350" align="right"/>
 
 
 
-This GitHub repository contains a development preview of the latest features of EPANET, developed by Open Water Analytics. The compiled engine is combined with an updated version of the legacy EPANET Graphical User Interface (GUI), enabling community members to evaluate and test the latest features of EPANET.
+This GitHub repository contains a development preview of the latest features of EPANET, developed by Open Water Analytics.
+
+The compiled engine is combined with an updated version of the legacy EPANET Graphical User Interface (GUI), enabling community members to evaluate and test the latest features of EPANET.
 
 The preview allows for feedback from the community, especially from those who may not be able to compile the EPANET source code themselves and prefer working within a GUI.
 
