@@ -27,9 +27,9 @@ const
   MAXPOINTS = 50;
   TINY = 0.000001;  //1.e-6;
   Xlabel: array[0..4] of PChar =
-    (' Height', ' Flow', ' Flow', ' Flow', 'Opening');
+    (' Height', ' Flow', ' Flow', ' Flow', 'Open');
   Ylabel: array[0..4] of PChar =
-    (' Volume', ' Head', ' Efficiency', ' Headloss', 'Headloss');
+    (' Volume', ' Head', ' Efficiency', ' Headloss', 'Cv / Cvo');
   MSG_OUT_OF_ORDER = ' values are not in ascending order.';
   MSG_BAD_CURVE = 'Illegal pump curve. Continue editing?';
   FMT_EQN = ' Head = %f%-.4g(Flow)^%f';
@@ -128,12 +128,12 @@ begin
   Xunits[HEADCURVE]  := ' (' + FlowUnits + ')';
   Xunits[EFFCURVE]   := Xunits[HEADCURVE];
   Xunits[HLOSSCURVE] := Xunits[HEADCURVE];
-  Xunits[VALVECURVE] := Xunits[HEADCURVE];
+  Xunits[VALVECURVE] := ' (Fraction)';
   Yunits[VOLCURVE]   := TXT_CUBIC + LengthUnits + ')';
   Yunits[HEADCURVE]  := ' (' + LengthUnits + ')';
   Yunits[EFFCURVE]   := TXT_PERCENT;
   Yunits[HLOSSCURVE] := ' (' + LengthUnits + ')';
-  Yunits[VALVECURVE] := TXT_PERCENT;
+  Yunits[VALVECURVE] := '';
   CurveGrid.RowCount := MAXPOINTS + 1;
   CurveID.MaxLength := MAXID;  //Max. chars. in a ID
   ActiveControl := CurveID;
