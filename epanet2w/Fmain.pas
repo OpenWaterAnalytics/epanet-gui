@@ -41,7 +41,7 @@ const
   MSG_NO_BACKDROP = 'Could not find backdrop file ';
   MSG_FIND_BACKDROP = '. Do you want to search for it?';
 
-  TXT_MAIN_CAPTION = 'EPANET (DEV BRANCH)';
+  TXT_MAIN_CAPTION = 'EPANET [DEV 2023-04-20]';
   TXT_AUTOLENGTH = 'Auto-Length ';
   TXT_STATUS_REPORT = 'Status Report';
   TXT_SAVE_CHANGES = 'Save changes made to current project?';
@@ -359,7 +359,7 @@ implementation
 uses
   Fbrowser, Fcalib, Fcontour, Fenergy, Fgraph, Fmap, Fovmap, Fproped,
   Fsimul, Fstatus, Fsummary, Ftable, Dabout, Dcalib1, Dcalib2, Ddefault,
-  Ddataexp, Dfind, Dgraph, Dgrouped, Dmapexp, Dprefers, Dquery,
+  Ddataexp, Dfind, Dgraph, Dgrouped, Dmapexp, Dprefers, Dquery, Ddisclaimer,
   Dtable, Uexport, Ufileio, Uimport, Uinifile, Uinput, Uoutput, Ureport;
 
 
@@ -465,6 +465,14 @@ begin
 
 // Prevent form from repainting itself for now
   LockWindowUpdate(Handle);
+
+// Display development version disclaimer
+  with TdisclaimerForm.Create(self) do
+  try
+    ShowModal;
+  finally
+    Free;
+  end;
 
 // Enable only for testing
   //ReportMemoryLeaksOnShutdown := True;
