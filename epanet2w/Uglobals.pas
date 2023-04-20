@@ -209,6 +209,7 @@ const
   VALVE_SETTING_INDEX = 4;  //Setting
   VALVE_MLOSS_INDEX   = 5;  //Minor loss coeff.
   VALVE_STATUS_INDEX  = 6;  //Status
+  VALVE_CURVE_INDEX   = 7;  //Valve Curve
 
 //---------------------------
 // Map Label property indexes

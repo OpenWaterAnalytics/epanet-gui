@@ -456,6 +456,7 @@ begin
       if Ntoks > 4 then aLink.Data[VALVE_TYPE_INDEX] := TokList[4];
       if Ntoks > 5 then aLink.Data[VALVE_SETTING_INDEX] := TokList[5];
       if Ntoks > 6 then aLink.Data[VALVE_MLOSS_INDEX] := TokList[6];
+      if Ntoks > 7 then aLink.Data[VALVE_CURVE_INDEX] := TokList[7];
       Network.Lists[VALVES].AddObject(ID,aLink);
       LinkList.AddObject(ID,aLink);
       Result := 0;
