@@ -30,11 +30,18 @@ A copy of `epanet2.dll` is also required, this can be compiled from the `owa-epa
 
 ## Contributing
 
+<img src="https://user-images.githubusercontent.com/6113153/233522204-b683c299-d325-4776-b341-476ad4e1f3fc.gif" alt="placeholder" height="350" align="right"/>
+
+
 While contributions to this project are welcome, it is important to note that the primary focus is to allow for the testing and evaluation of the latest features of the EPANET engine.
 
 As such, creating cosmetic changes or adding new functionality within the user interface is not the intended purpose of this project and may not be accepted as a feature request, issue, or pull request.
 
 If there is any uncertainty about a potential contribution, we encourage opening an issue to discuss it before creating a pull request.
+
+We actively encourage feedback on the latest developments of the EPANET engine through this repository. However, some feedback may be directed towards the OWA-EPANET repository maintained by the Open Water Analytics (OWA) Community.
+
+If you wish to stay informed about the latest releases of the EPANET development preview, please click the 'Watch' button at the top of the page. If you only want to receive notifications about when a release is made, you can customize the notifications by following the instructions in the video on the right.
 
 ## License
 
