@@ -1,5 +1,7 @@
 program Epanet2w;
 
+
+
 uses
   WinProcs,
   Forms,
@@ -56,7 +58,8 @@ uses
   Dchart in 'Dchart.pas' {ChartOptionsDlg},
   Vcl.Themes,
   Vcl.Styles,
-  Dsource in 'Dsource.pas' {SourceForm};
+  Dsource in 'Dsource.pas' {SourceForm},
+  Ddisclaimer in 'Ddisclaimer.pas' {DisclaimerForm};
 
 {$R *.RES}
 
@@ -67,5 +70,6 @@ begin
   Application.CreateForm(TFindForm, FindForm);
   Application.CreateForm(TQueryForm, QueryForm);
   Application.CreateForm(TOVMapForm, OVMapForm);
+  Application.CreateForm(TDisclaimerForm, DisclaimerForm);
   Application.Run;
 end.
