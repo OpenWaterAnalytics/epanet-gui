@@ -336,6 +336,7 @@ begin
   if (IOResult = 0) then
   try
 
+    Writeln(F,';INP saved using EPANET Development Preview version ',VERSIONDEV);
     Writeln(F,'[TITLE]');
     Writeln(F,Network.Options.Title);
     slist := Network.Options.Notes;

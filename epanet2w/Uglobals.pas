@@ -53,6 +53,8 @@ const
 //------------------
   VERSIONID1 = 20005;
   VERSIONID2 = 20201;
+  VERSIONDEV = 20240301; //Compile date
+
 
 //------------------
 // Maximum limits

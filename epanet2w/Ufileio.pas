@@ -165,7 +165,7 @@ begin
 
     //Write file header.
       WriteString('<EPANET2>');
-      WriteInteger(VERSIONID2);
+      WriteInteger(VERSIONDEV);
 
     //Write numbers of network components
       for i := JUNCS to CNTRLS do
@@ -436,7 +436,7 @@ begin
 
       //Read version ID
         Version := ReadInteger;
-        if (Version < VERSIONID1) or (Version > VERSIONID2) then
+        if (Version < VERSIONID1) or (Version > VERSIONDEV) then
         begin
           raise EReadError.Create(MSG_READ_ERR);
         end;
