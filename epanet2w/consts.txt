@@ -42,8 +42,8 @@ const
 //Data reporting units
   USFlowUnits: array[0..4] of PChar =
                  ('CFS', 'GPM', 'MGD', 'IMGD', 'AFD');
-  SIFlowUnits: array[0..4] of PChar =
-                 ('LPS', 'LPM', 'MLD', 'CMH', 'CMD');
+  SIFlowUnits: array[0..5] of PChar =
+                 ('LPS', 'LPM', 'MLD', 'CMH', 'CMD', 'CMS');
   BaseQualUnits: array[0..3] of PChar =
                  ('', 'mg/L', 'percent', 'hours');
   MassUnits:     array[0..1] of PChar = ('mg/L', 'ug/L');
@@ -207,7 +207,7 @@ const
   HydraulicProps: array [0..19] of TPropRecord =
     ((Name:'Flow Units';         Style:esComboList;  Mask:emNone; Length:0;
       List:'CFS'#13'GPM'#13'MGD'#13'IMGD'#13'AFD'#13 +
-           'LPS'#13'LPM'#13'MLD'#13'CMH'#13'CMD'),
+           'LPS'#13'LPM'#13'MLD'#13'CMH'#13'CMD'#13'CMS'),
      (Name:'Headloss Formula';   Style:esComboList;  Mask:emNone; Length:0;
       List:'H-W'#13'D-W'#13'C-M'),
      (Name:'Specific Gravity';   Style:esEdit; Mask:emPosNumber),
