@@ -171,7 +171,13 @@ begin
        PropList[I].Add(DefProp[PIPES].Data[PIPE_ROUGH_INDEX]);
      end;
   2: begin
-       for j := FLOW_UNITS_INDEX to STATUS_RPT_INDEX do
+       for j := FLOW_UNITS_INDEX to EMITTER_EXP_INDEX do
+         PropList[I].Add(Network.Options.Data[j]);
+       PropList[I].Add(Network.Options.Data[EMITTER_BACK_INDEX]);
+       PropList[I].Add(Network.Options.Data[STATUS_RPT_INDEX]);
+       for j := HEAD_ERROR_INDEX to PRESSURE_EXP_INDEX do
+         PropList[I].Add(Network.Options.Data[j]);
+       for j := CHECK_FREQ_INDEX to DAMP_LIMIT_INDEX do
          PropList[I].Add(Network.Options.Data[j]);
      end;
   end;
@@ -213,8 +219,15 @@ begin
   DefProp[PIPES].Data[PIPE_DIAM_INDEX] := PropList[1].Strings[5];
   DefProp[PIPES].Data[PIPE_ROUGH_INDEX] := PropList[1].Strings[6];
   DefProp[VALVES].Data[VALVE_DIAM_INDEX] := DefProp[PIPES].Data[PIPE_DIAM_INDEX];
-  for j := FLOW_UNITS_INDEX to STATUS_RPT_INDEX do
+
+  for j := FLOW_UNITS_INDEX to EMITTER_EXP_INDEX do
     Network.Options.Data[j] := PropList[2].Strings[j-FLOW_UNITS_INDEX];
+  Network.Options.Data[EMITTER_BACK_INDEX] := PropList[2].Strings[10];
+  Network.Options.Data[STATUS_RPT_INDEX] := PropList[2].Strings[11];
+  for j := HEAD_ERROR_INDEX to PRESSURE_EXP_INDEX do
+    Network.Options.Data[j] := PropList[2].Strings[12+j-HEAD_ERROR_INDEX];
+  for j := CHECK_FREQ_INDEX to DAMP_LIMIT_INDEX do
+    Network.Options.Data[j] := PropList[2].Strings[18+j-CHECK_FREQ_INDEX];
 
   Uinput.UpdateAllUnits;
 

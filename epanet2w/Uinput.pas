@@ -646,8 +646,12 @@ begin
     begin
       case Index of
       0:  begin
-            for k := FLOW_UNITS_INDEX to STATUS_RPT_INDEX do //Hydraulics
+            for k := FLOW_UNITS_INDEX to EMITTER_EXP_INDEX do //Hydraulics
               PropList.Add(Data[k]);
+            
+            PropList.Add(Data[EMITTER_BACK_INDEX]);
+            PropList.Add(Data[STATUS_RPT_INDEX]);
+
             for k := HEAD_ERROR_INDEX to PRESSURE_EXP_INDEX do
               PropList.Add(Data[k]);
             for k := CHECK_FREQ_INDEX to DAMP_LIMIT_INDEX do
@@ -1499,9 +1503,10 @@ begin
   k := I;
   // Convert from editor index I to property index k
   case EditorIndex of
-    0: if I < 11 then k := I       //HYDRAULICS
-       else if I < 17 then k := HEAD_ERROR_INDEX + (I - 11)
-       else k := CHECK_FREQ_INDEX + (I - 17);
+    0: if I < 10 then k := I       //HYDRAULICS
+       else if I = 10 then k := EMITTER_BACK_INDEX
+       else if I < 17 then k := HEAD_ERROR_INDEX + (I - 12)
+       else k := CHECK_FREQ_INDEX + (I - 18);
 
     1: k := QUAL_PARAM_INDEX  + I;  //QUALITY
     2: k := BULK_ORDER_INDEX + I;   //REACTIONS

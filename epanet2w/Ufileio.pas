@@ -465,6 +465,11 @@ begin
             Network.Options.Data[i] := DefOptions[i];
         end;
 
+        if (Version < VERSIONDEV) then
+        begin
+          Network.Options.Data[EMITTER_BACK_INDEX] := DefOptions[EMITTER_BACK_INDEX];
+        end;
+
       //Check if Quality Time Step is in hours instead of minutes
         with Network.Options do
         begin

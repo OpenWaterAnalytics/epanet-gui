@@ -204,7 +204,7 @@ const
     (Name:'Meter ID';       Style:esEdit;      Mask:emNoSpace;  Length:MAXID),
     (Name:'Font';           Style:esButton;    Mask:emNone));
 
-  HydraulicProps: array [0..19] of TPropRecord =
+  HydraulicProps: array [0..20] of TPropRecord =
     ((Name:'Flow Units';         Style:esComboList;  Mask:emNone; Length:0;
       List:'CFS'#13'GPM'#13'MGD'#13'IMGD'#13'AFD'#13 +
            'LPS'#13'LPM'#13'MLD'#13'CMH'#13'CMD'#13'CMS'),
@@ -219,6 +219,8 @@ const
      (Name:'Default Pattern';    Style:esEdit; Mask:emNoSpace;    Length:MAXID),
      (Name:'Demand Multiplier';  Style:esEdit; Mask:emPosNumber),
      (Name:'Emitter Exponent';   Style:esEdit; Mask:emPosNumber),
+     (Name:'Emitter Backflow';   Style:esComboList; Mask:emNone;  Length:0;
+      List:'Yes'#13'No'),
      (Name:'Status Report';      Style:esComboList; Mask:emNone;  Length:0;
       List:'No'#13'Yes'#13'Full'),
 
@@ -395,7 +397,9 @@ const
                      'DDA',         {41-Demand Model}
                      '0',           {42-Minimum Pressure}
                      '0.1',         {43-Required Pressure}
-                     '0.5');        {44-Pressure Exponent}
+                     '0.5',         {44-Pressure Exponent}
+                     
+                     'Yes');        {45-Emitter Backflow}
 
 //Node reporting variables
 //  Name         = name of variable

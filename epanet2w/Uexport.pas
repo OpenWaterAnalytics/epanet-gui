@@ -742,6 +742,7 @@ begin
       end;
 
       Writeln(F,' Emitter Exponent   '#9,Data[EMITTER_EXP_INDEX]);
+      Writeln(F,' Emitter Backflow   '#9,Data[EMITTER_BACK_INDEX]);
       if UpperCase(Trim(Data[QUAL_PARAM_INDEX])) = 'TRACE' then
       Writeln(F,' Quality            '#9'Trace ',Data[TRACE_NODE_INDEX])
       else
