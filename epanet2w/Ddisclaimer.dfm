@@ -3,7 +3,7 @@ object DisclaimerForm: TDisclaimerForm
   Top = 104
   BorderStyle = bsDialog
   Caption = 'EPANET Development Version Disclaimer'
-  ClientHeight = 329
+  ClientHeight = 480
   ClientWidth = 377
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,15 +11,13 @@ object DisclaimerForm: TDisclaimerForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OldCreateOrder = False
   Position = poMainFormCenter
-  PixelsPerInch = 96
   TextHeight = 15
   object Panel1: TPanel
     Left = 24
     Top = 8
     Width = 337
-    Height = 281
+    Height = 433
     BevelInner = bvRaised
     BevelOuter = bvLowered
     TabOrder = 0
@@ -40,12 +38,12 @@ object DisclaimerForm: TDisclaimerForm
       IsControl = True
     end
     object Version: TLabel
-      Left = 146
+      Left = 106
       Top = 45
-      Width = 74
+      Width = 152
       Height = 14
       Alignment = taCenter
-      Caption = '2023-04-20'
+      Caption = 'GUI Version: 2024-03-01'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -72,7 +70,7 @@ object DisclaimerForm: TDisclaimerForm
     end
     object Build: TLabel
       Left = 133
-      Top = 65
+      Top = 89
       Width = 102
       Height = 14
       Alignment = taCenter
@@ -82,6 +80,21 @@ object DisclaimerForm: TDisclaimerForm
       Font.Height = -12
       Font.Name = 'Tahoma'
       Font.Style = []
+      ParentFont = False
+      IsControl = True
+    end
+    object Label1: TLabel
+      Left = 86
+      Top = 65
+      Width = 172
+      Height = 14
+      Alignment = taCenter
+      Caption = 'Engine Version: 2023-06-08'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
       ParentFont = False
       IsControl = True
     end
@@ -213,9 +226,9 @@ object DisclaimerForm: TDisclaimerForm
     end
     object Memo1: TMemo
       Left = 9
-      Top = 85
+      Top = 120
       Width = 321
-      Height = 185
+      Height = 305
       BorderStyle = bsNone
       Color = clMenu
       Lines.Strings = (
@@ -234,13 +247,18 @@ object DisclaimerForm: TDisclaimerForm
         ''
         'The developers of this software are not responsible for any '
         'damage or loss caused by the use of this development '
-        'version.')
+        'version.'
+        ''
+        'Networks saved with a development version will not be'
+        'compatible with the standard release of the software or'
+        'with other development versions.')
+      ReadOnly = True
       TabOrder = 1
     end
   end
   object Button1: TButton
     Left = 157
-    Top = 295
+    Top = 447
     Width = 75
     Height = 25
     Caption = 'OK'

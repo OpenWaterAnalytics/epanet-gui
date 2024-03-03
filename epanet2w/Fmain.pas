@@ -41,7 +41,7 @@ const
   MSG_NO_BACKDROP = 'Could not find backdrop file ';
   MSG_FIND_BACKDROP = '. Do you want to search for it?';
 
-  TXT_MAIN_CAPTION = 'EPANET [DEV 2023-04-20]';
+  TXT_MAIN_CAPTION = 'EPANET [DEV 2024-03-01]';
   TXT_AUTOLENGTH = 'Auto-Length ';
   TXT_STATUS_REPORT = 'Status Report';
   TXT_SAVE_CHANGES = 'Save changes made to current project?';

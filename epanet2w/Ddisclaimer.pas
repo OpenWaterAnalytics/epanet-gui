@@ -17,6 +17,7 @@ type
     ProgramIcon: TImage;
     Button1: TButton;
     Memo1: TMemo;
+    Label1: TLabel;
   private
     { Private declarations }
   public
