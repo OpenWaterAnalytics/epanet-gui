@@ -295,9 +295,22 @@ begin
       IDPrefix[i] := ReadString('Labels',ObjectLabel[i],'');
 
   // Retrieve default hydraulic analysis options
-    for i := FLOW_UNITS_INDEX to STATUS_RPT_INDEX do
+    for i := FLOW_UNITS_INDEX to EMITTER_EXP_INDEX do
       Network.Options.Data[i] := ReadString('Hydraulics',
         HydraulicProps[i].Name,Network.Options.Data[i]);
+
+    Network.Options.Data[EMITTER_BACK_INDEX] := ReadString('Hydraulics',
+        HydraulicProps[10].Name,Network.Options.Data[EMITTER_BACK_INDEX]);
+    Network.Options.Data[STATUS_RPT_INDEX] := ReadString('Hydraulics',
+        HydraulicProps[11].Name,Network.Options.Data[STATUS_RPT_INDEX]);
+
+    for i := HEAD_ERROR_INDEX to PRESSURE_EXP_INDEX do
+      Network.Options.Data[i] := ReadString('Hydraulics',
+        HydraulicProps[12+i-HEAD_ERROR_INDEX].Name,Network.Options.Data[i]);
+
+    for i := CHECK_FREQ_INDEX to DAMP_LIMIT_INDEX do
+      Network.Options.Data[i] := ReadString('Hydraulics',
+        HydraulicProps[18+i-CHECK_FREQ_INDEX].Name,Network.Options.Data[i]);
 
   // Retrieve specific default node properties
     DefProp[JUNCS].Data[JUNC_ELEV_INDEX] :=
@@ -346,8 +359,21 @@ begin
       WriteString('Labels',ObjectLabel[i],IDPrefix[i]);
 
   // Save default hydraulic analysis options
-    for i := FLOW_UNITS_INDEX to STATUS_RPT_INDEX do
+    for i := FLOW_UNITS_INDEX to EMITTER_EXP_INDEX do
        WriteString('Hydraulics',HydraulicProps[i].Name,
+         Network.Options.Data[i]);
+    
+    WriteString('Hydraulics',HydraulicProps[10].Name,
+      Network.Options.Data[EMITTER_BACK_INDEX]);
+    WriteString('Hydraulics',HydraulicProps[11].Name,
+      Network.Options.Data[STATUS_RPT_INDEX]);
+
+    for i := HEAD_ERROR_INDEX to PRESSURE_EXP_INDEX do
+       WriteString('Hydraulics',HydraulicProps[12+i-HEAD_ERROR_INDEX].Name,
+         Network.Options.Data[i]);
+
+    for i := CHECK_FREQ_INDEX to DAMP_LIMIT_INDEX do
+       WriteString('Hydraulics',HydraulicProps[18+i-CHECK_FREQ_INDEX].Name,
          Network.Options.Data[i]);
 
   // Save specific default node properties

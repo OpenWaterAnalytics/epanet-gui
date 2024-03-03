@@ -165,7 +165,7 @@ begin
 
     //Write file header.
       WriteString('<EPANET2>');
-      WriteInteger(VERSIONID2);
+      WriteInteger(VERSIONDEV);
 
     //Write numbers of network components
       for i := JUNCS to CNTRLS do
@@ -436,7 +436,7 @@ begin
 
       //Read version ID
         Version := ReadInteger;
-        if (Version < VERSIONID1) or (Version > VERSIONID2) then
+        if (Version < VERSIONID1) or (Version > VERSIONDEV) then
         begin
           raise EReadError.Create(MSG_READ_ERR);
         end;
@@ -463,6 +463,11 @@ begin
         begin
           for i := HEAD_ERROR_INDEX to PRESSURE_EXP_INDEX do
             Network.Options.Data[i] := DefOptions[i];
+        end;
+
+        if (Version < VERSIONDEV) then
+        begin
+          Network.Options.Data[EMITTER_BACK_INDEX] := DefOptions[EMITTER_BACK_INDEX];
         end;
 
       //Check if Quality Time Step is in hours instead of minutes

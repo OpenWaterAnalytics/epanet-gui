@@ -53,6 +53,8 @@ const
 //------------------
   VERSIONID1 = 20005;
   VERSIONID2 = 20201;
+  VERSIONDEV = 20240301; //Compile date
+
 
 //------------------
 // Maximum limits
@@ -61,7 +63,7 @@ const
   MAXINTERVALS = 4;  //Max. color scale interval index
   MAXNODEPROPS = 26; //Max. index for node property array
   MAXLINKPROPS = 25; //Max. index for link property array
-  MAXOPTIONS   = 44; //Max. index for network options array
+  MAXOPTIONS   = 45; //Max. index for network options array
   MAXSERIES    = 5;  //Max. time series plots per graph
   MAXCOLS      = 15; //Max. columns in a table
   MAXFILTERS   = 10; //Max. filter conditions for table
@@ -272,6 +274,8 @@ const
   MIN_PRESSURE_INDEX  = 42; //Minimum service pressure
   REQ_PRESSURE_INDEX  = 43; //Required service pressure
   PRESSURE_EXP_INDEX  = 44; //Exponent in demand v. pressure function
+
+  EMITTER_BACK_INDEX  = 45; //Emitter backflow
 
 //-----------------
 // Graph-type codes

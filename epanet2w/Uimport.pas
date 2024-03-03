@@ -1215,9 +1215,13 @@ begin
          else Network.Options.Data[DEMAND_MULT_INDEX] := TokList[2];
        end;
 
-  // Emitter Exponent option
+  // Emitter Exponent or Emitter backflow option
     9: if Ntoks >= 3 then
-         Network.Options.Data[EMITTER_EXP_INDEX] := TokList[2];
+       begin
+         if CompareText(TokList[1], 'EXPONENT') = 0
+         then Network.Options.Data[EMITTER_EXP_INDEX] := TokList[2]
+         else Network.Options.Data[EMITTER_BACK_INDEX] := TokList[2];
+       end;
 
     3,  //Rel. Viscosity
     4,  //Max Trials
