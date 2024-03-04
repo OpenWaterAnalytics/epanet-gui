@@ -858,7 +858,6 @@ procedure TPropEdit.GridDrawCell(Sender: TObject; vCol,
 //-----------------------------------------------------------------------------
 begin
   if (FProps = nil) then Exit;
-  Rect.Left := Rect.Left - 4;
   with Sender as TStringGrid do
   begin
     with Canvas do
