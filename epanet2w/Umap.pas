@@ -16,7 +16,7 @@ unit Umap;
 interface
 
 uses Windows, Graphics, SysUtils, Dialogs, Forms, Classes,
-     Controls, Math, System.Types, System.UITypes,
+     Controls, Math, Jpeg, Vcl.Imaging.pngimage, System.Types, System.UITypes,
      Uglobals, Uutils, Uinput, Uoutput, Dlegend;
 
 const
