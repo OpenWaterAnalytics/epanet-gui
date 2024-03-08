@@ -841,6 +841,18 @@ begin
     begin
       PopupMenu2.Popup(aPoint.X,aPoint.Y);
     end;
+  end
+
+  // The middle button begins a panning operation
+  else if Button = mbMiddle then
+  begin
+    if not Fencing and not Linking then EraseFenceline;
+    Cursor := crFIST;
+    HiliteOff;
+    Panning := True;
+    AnchorX := X;
+    AnchorY := Y;
+    ScrollRect := Map.Window.MapRect;
   end;
 end;
 
@@ -916,6 +928,12 @@ begin
     ZOOMIN:        GoZoomIn(X,Y);
     ZOOMOUT:       GoZoomOut(X,Y);
     end;
+  end
+
+  else if (Button = mbMiddle) and Panning then
+  begin
+    EndPanning;
+    Cursor := crDefault;
   end;
 end;
 
