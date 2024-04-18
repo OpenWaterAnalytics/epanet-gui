@@ -2,6 +2,7 @@
 
 - Support was added for PNG & JPG files in backdrops. [[PR #22](https://github.com/OpenWaterAnalytics/epanet-gui/pull/22)]
 - Support was added for panning with a middle mouse click. [[PR #21](https://github.com/OpenWaterAnalytics/epanet-gui/pull/21)]
+- Fixed bug where you could not simulate a tank that had both a volume curve and could overflow. [[Commit #b54ad1c](https://github.com/OpenWaterAnalytics/epanet-gui/commit/b54ad1c6df45c48985259cb921bf0e504a7ab067)]
 
 ## 2024-03-01
 
