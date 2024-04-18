@@ -400,7 +400,7 @@ begin
           begin
             if Length(Trim(Data[TANK_VCURVE_INDEX])) = 0
             then s := s + '*               '#9
-            else s := s + Format('-16s'#9, [Data[TANK_VCURVE_INDEX]]);
+            else s := s + Format('%-16s'#9, [Data[TANK_VCURVE_INDEX]]);
             s := s + 'Yes'#9';' + Data[COMMENT_INDEX];
           end
           else s := s + Format('%-16s'#9';%s', [Data[TANK_VCURVE_INDEX],
